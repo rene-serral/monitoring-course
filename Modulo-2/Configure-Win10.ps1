@@ -96,11 +96,11 @@ if (Test-Path -Path "$DesktopFolder\LGPO") { Remove-Item -Path "$DesktopFolder\L
 Write-Host "OK" -ForegroundColor Yellow
 
 # Descarga Git-Portable
-$progDownload = "Git-2.35.1.2-64-bit.zip"
+$progDownload = "v2.36.1.windows.1/Git-2.36.1-64-bit.zip"
 if (!(Test-Path -Path "$DesktopFolder\Downloads\$progDownload")) {
     Write-Host "Descargando Git-Portable ... " -ForegroundColor Green -NoNewline
     $start_time = Get-Date
-    Invoke-WebRequest https://github.com/git-for-windows/git/releases/download/v2.35.1.windows.2/$progDownload -OutFile "$DesktopFolder\Downloads\$progDownload"
+    Invoke-WebRequest https://github.com/git-for-windows/git/releases/download/$progDownload -OutFile "$DesktopFolder\Downloads\$progDownload"
     Write-Host "$((Get-Date).Subtract($start_time).Seconds) segundo(s)" -ForegroundColor Yellow
 } else {
     Write-Host "Git-Portable ya esta descargado" -ForegroundColor Yellow
@@ -253,8 +253,8 @@ if (!(Test-Path -Path "$DesktopFolder\Sysinternals\sysmonconfig-export-swift.xml
     $start_time = Get-Date
     # Invoke-WebRequest https://github.com/SwiftOnSecurity/sysmon-config/raw/master/sysmonconfig-export.xml -OutFile "$DesktopFolder\Sysinternals\sysmonconfig-export-swift.xml"
     # https://drive.google.com/file/d/1OFrDCr7nT-agY6Wd9VWA0q3u4qbH_pr4/view?usp=sharing
-    # Invoke-WebRequest "https://drive.google.com/uc?id=1OFrDCr7nT-agY6Wd9VWA0q3u4qbH_pr4&export=download" -OutFile "$DesktopFolder\Sysinternals\sysmonconfig-export-swift.xml"
-    Invoke-WebRequest "https://upc0-my.sharepoint.com/:u:/g/personal/manel_rodero_upc_edu/ERkdSNrfHTtHh9S5tYOKMEsBIW7iSFv9rOxXElgyxAsfjQ?download=1" -OutFile "$DesktopFolder\Sysinternals\sysmonconfig-export-swift.xml"
+    Invoke-WebRequest "https://drive.google.com/uc?id=1OFrDCr7nT-agY6Wd9VWA0q3u4qbH_pr4&export=download" -OutFile "$DesktopFolder\Sysinternals\sysmonconfig-export-swift.xml"
+    # Invoke-WebRequest "https://upc0-my.sharepoint.com/:u:/g/personal/manel_rodero_upc_edu/ERkdSNrfHTtHh9S5tYOKMEsBIW7iSFv9rOxXElgyxAsfjQ?download=1" -OutFile "$DesktopFolder\Sysinternals\sysmonconfig-export-swift.xml"
     Write-Host "$((Get-Date).Subtract($start_time).Seconds) segundo(s)" -ForegroundColor Yellow
 } else {
     Write-Host "sysmonconfig SwiftOnSecurity ya esta descargado" -ForegroundColor Yellow
@@ -266,8 +266,8 @@ if (!(Test-Path -Path "$DesktopFolder\Sysinternals\sysmonconfig-export-ion.xml")
     $start_time = Get-Date
     # Invoke-WebRequest https://github.com/ion-storm/sysmon-config/raw/master/sysmonconfig-export.xml -OutFile "$DesktopFolder\Sysinternals\sysmonconfig-export-ion.xml"
     # https://drive.google.com/file/d/1SU9wyYIaWab436COcKjI_fdKEUNnE3EA/view?usp=sharing
-    # Invoke-WebRequest "https://drive.google.com/uc?id=1SU9wyYIaWab436COcKjI_fdKEUNnE3EA&export=download" -OutFile "$DesktopFolder\Sysinternals\sysmonconfig-export-ion.xml"
-    Invoke-WebRequest "https://upc0-my.sharepoint.com/:u:/g/personal/manel_rodero_upc_edu/Ea2Zj_6xhW1Nm-US0xrEYr8BZiQ8BhfbeiyGivVAM-vNLA?download=1" -OutFile "$DesktopFolder\Sysinternals\sysmonconfig-export-ion.xml"
+    Invoke-WebRequest "https://drive.google.com/uc?id=1SU9wyYIaWab436COcKjI_fdKEUNnE3EA&export=download" -OutFile "$DesktopFolder\Sysinternals\sysmonconfig-export-ion.xml"
+    # Invoke-WebRequest "https://upc0-my.sharepoint.com/:u:/g/personal/manel_rodero_upc_edu/Ea2Zj_6xhW1Nm-US0xrEYr8BZiQ8BhfbeiyGivVAM-vNLA?download=1" -OutFile "$DesktopFolder\Sysinternals\sysmonconfig-export-ion.xml"
     Write-Host "$((Get-Date).Subtract($start_time).Seconds) segundo(s)" -ForegroundColor Yellow
 } else {
     Write-Host "sysmonconfig Ion-Storm ya esta descargado" -ForegroundColor Yellow
@@ -277,8 +277,8 @@ if (!(Test-Path -Path "$DesktopFolder\Sysinternals\sysmonconfig-export-ion.xml")
 if (!(Test-Path -Path "$DesktopFolder\Sysinternals\sysmonconfig-export-olaf.xml")) {
     Write-Host "Descargando sysmonconfig Olaf Hartong ... " -ForegroundColor Green -NoNewline
     $start_time = Get-Date
-    # Invoke-WebRequest https://raw.githubusercontent.com/olafhartong/sysmon-modular/master/sysmonconfig.xml -OutFile "$DesktopFolder\Sysinternals\sysmonconfig-export-olaf.xml"
-    Invoke-WebRequest "https://upc0-my.sharepoint.com/:u:/g/personal/manel_rodero_upc_edu/ES83WRVSPCpKhfn2BcREZXYBKpWcQzD3s_-aoc3aXncH1w?download=1" -OutFile "$DesktopFolder\Sysinternals\sysmonconfig-export-olaf.xml"
+    Invoke-WebRequest https://raw.githubusercontent.com/olafhartong/sysmon-modular/master/sysmonconfig.xml -OutFile "$DesktopFolder\Sysinternals\sysmonconfig-export-olaf.xml"
+    # Invoke-WebRequest "https://upc0-my.sharepoint.com/:u:/g/personal/manel_rodero_upc_edu/ES83WRVSPCpKhfn2BcREZXYBKpWcQzD3s_-aoc3aXncH1w?download=1" -OutFile "$DesktopFolder\Sysinternals\sysmonconfig-export-olaf.xml"
     Write-Host "$((Get-Date).Subtract($start_time).Seconds) segundo(s)" -ForegroundColor Yellow
 } else {
     Write-Host "sysmonconfig Olaf Hartong ya esta descargado" -ForegroundColor Yellow
@@ -301,8 +301,8 @@ if (!(Test-Path -Path "$DesktopFolder\Downloads\$progDownload")) {
     $start_time = Get-Date
     # Invoke-WebRequest https://updates.atomicorp.com/channels/atomic/windows/$progDownload -OutFile "$DesktopFolder\Downloads\$progDownload"
     # https://drive.google.com/file/d/1mXAfYBZuNvXTAMXO2yov4D61ctb2D5Di/view?usp=sharing
-    # Invoke-WebRequest "https://drive.google.com/uc?id=1mXAfYBZuNvXTAMXO2yov4D61ctb2D5Di&export=download" -OutFile "$DesktopFolder\Downloads\$progDownload"
-    Invoke-WebRequest "https://upc0-my.sharepoint.com/:u:/g/personal/manel_rodero_upc_edu/EYCpoIMgIglNoK0YT27IxLcBbpbNnPbkfjmWh0mWLjTGSg?download=1" -OutFile "$DesktopFolder\Downloads\$progDownload"
+    Invoke-WebRequest "https://drive.google.com/uc?id=1mXAfYBZuNvXTAMXO2yov4D61ctb2D5Di&export=download" -OutFile "$DesktopFolder\Downloads\$progDownload"
+    # Invoke-WebRequest "https://upc0-my.sharepoint.com/:u:/g/personal/manel_rodero_upc_edu/EYCpoIMgIglNoK0YT27IxLcBbpbNnPbkfjmWh0mWLjTGSg?download=1" -OutFile "$DesktopFolder\Downloads\$progDownload"
     Write-Host "$((Get-Date).Subtract($start_time).Seconds) segundo(s)" -ForegroundColor Yellow
 } else {
     Write-Host "OSSEC ya esta descargado" -ForegroundColor Yellow
