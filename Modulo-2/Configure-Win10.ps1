@@ -1,4 +1,4 @@
-﻿# Script de Configuración de Windows 8.1 IE11
+# Script de Configuración de Windows 8.1 IE11
 
 # Configuración de la zona horaria
 tzutil /s "Romance Standard Time" 
@@ -96,20 +96,20 @@ if (Test-Path -Path "$DesktopFolder\LGPO") { Remove-Item -Path "$DesktopFolder\L
 Write-Host "OK" -ForegroundColor Yellow
 
 # Descarga Git-Portable
-$progDownload = "v2.36.1.windows.1/Git-2.36.1-64-bit.zip"
+$progDownload = "Git-2.36.1-64-bit.exe"
 if (!(Test-Path -Path "$DesktopFolder\Downloads\$progDownload")) {
     Write-Host "Descargando Git-Portable ... " -ForegroundColor Green -NoNewline
     $start_time = Get-Date
-    Invoke-WebRequest https://github.com/git-for-windows/git/releases/download/$progDownload -OutFile "$DesktopFolder\Downloads\$progDownload"
+    Invoke-WebRequest https://github.com/git-for-windows/git/releases/download/v2.36.1.windows.1/$progDownload -OutFile "$DesktopFolder\Downloads\$progDownload"
     Write-Host "$((Get-Date).Subtract($start_time).Seconds) segundo(s)" -ForegroundColor Yellow
 } else {
     Write-Host "Git-Portable ya esta descargado" -ForegroundColor Yellow
 }
 
 # Instalación de Git-Portable
-Write-Host "Descomprimiendo Git Portable ... " -ForegroundColor Green -NoNewline
+Write-Host "Instalando Git Portable ... " -ForegroundColor Green -NoNewline
 if (Test-Path -Path "$DesktopFolder\Git") { Remove-Item -Path "$DesktopFolder\Git" -Recurse -Force }
-& "$env:ProgramFiles\7-Zip\7z.exe" x -o"$DesktopFolder\Git" -y "$DesktopFolder\Downloads\$progDownload" | Out-Null
+& "$DesktopFolder\Downloads\Git-2.36.1-64-bit.exe" | Out-Null
 Write-Host "OK" -ForegroundColor Yellow
 
 # Descarga Sysinternals Suite
